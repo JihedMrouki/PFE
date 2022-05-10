@@ -1,5 +1,6 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:mealbox/screens/inscription/inscription.dart';
 
 class SeConnecter extends StatefulWidget {
   const SeConnecter({Key? key}) : super(key: key);
@@ -67,11 +68,11 @@ class _SeConnecterState extends State<SeConnecter> {
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50.0),
-                      borderSide: const BorderSide(
-                        width: 0,
-                        style: BorderStyle.none,
-                      )),
+            borderRadius: BorderRadius.circular(50.0),
+            borderSide: const BorderSide(
+              width: 0,
+              style: BorderStyle.none,
+            )),
         prefixIcon: const Icon(Icons.vpn_key),
         //hintText: 'mot de passe',
         filled: true,
@@ -145,11 +146,10 @@ class _SeConnecterState extends State<SeConnecter> {
                           const Text("Un trou de mémoire ? "),
                           GestureDetector(
                             onTap: () {
-                              // Navigator.push(
-                              //     context,
-                              //     MaterialPageRoute(
-                              //         builder: (context) =>
-                              //             RegistrationScreen()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => inscription()));
                             },
                             child: const Text("S'inscire",
                                 style: TextStyle(
