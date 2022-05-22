@@ -12,7 +12,7 @@ stages:
     - flutter build appbundle
   artifacts:
     paths:
-      - build/app/outputs/
+      - build/app/outputs/apk/debug
 build:debug:
   extends: .build
   script:

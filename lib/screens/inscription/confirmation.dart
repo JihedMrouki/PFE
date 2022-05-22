@@ -22,38 +22,60 @@ class _confirmationState extends State<confirmation> {
           SizedBox(height: MediaQuery.of(context).size.height * 0.18),
           Center(child: SvgPicture.asset('assets/images/confirmation.svg')),
           Center(
-            child: Text(
-              'Votre compte est pret !',
-              style: GoogleFonts.roboto(
-                  textStyle:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(18, 0, 18, 8),
+                  child: Text(
+                    'Félicitations!',
+                    style: GoogleFonts.roboto(
+                        textStyle: const TextStyle(
+                          color: Color.fromRGBO(60, 170, 54, 1),
+                            fontSize: 34, fontWeight: FontWeight.w700)),
+                  ),
+                ),
+                Text(
+                  'Votre compte est pret !',
+                  style: GoogleFonts.roboto(
+                      textStyle: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w600)),
+                ),
+              ],
             ),
           ),
-          SizedBox(
-            height: 30,
+          const SizedBox(
+            height: 50,
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: InkWell(
-              onTap: () {
-                // Get.to(() => inscription());
-              },
-              child: Container(
-                alignment: Alignment.center,
-                height: 60,
-                child: Text(
-                  "Commencer",
-                  style: GoogleFonts.roboto(
-                      textStyle:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w700)),
+            padding: const EdgeInsets.fromLTRB(36, 18, 36, 8),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(375, 60),
+                primary: const Color.fromRGBO(60, 170, 54, 1),
+                onPrimary: Colors.white,
+                side: const BorderSide(
+                  width: 1,
+                  color: Color.fromARGB(158, 60, 170, 1),
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Color.fromRGBO(147, 197, 114, 1),
+                //shadowColor: Colors.greenAccent,
+                elevation: 1,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+              ),
+              onPressed: () {},
+              child: Text(
+                "Commencer",
+                style: GoogleFonts.roboto(
+                  textStyle: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    //color: Colors.black
+                  ),
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
