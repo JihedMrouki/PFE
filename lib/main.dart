@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:flutter/services.dart';
-import 'screens/WelcomeScreen.dart';
+import 'screens/welcome.dart';
 
 void main() async {
   await initHiveForFlutter();
-  final HttpLink link = HttpLink(
+  final HttpLink httpLink = HttpLink(
     'https://gateway.mealbox.dev/graphql',
   );
+
+  final AuthLink authLink = AuthLink(
+    getToken: () async => 'Bearer <YOUR_PERSONAL_ACCESS_TOKEN>',
+    // OR
+    // getToken: () => 'Bearer <YOUR_PERSONAL_ACCESS_TOKEN>',
+  );
+
+  final Link link = authLink.concat(httpLink);
 
   ValueNotifier<GraphQLClient> client = ValueNotifier(
     GraphQLClient(

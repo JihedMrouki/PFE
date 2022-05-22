@@ -34,8 +34,8 @@ class _inscriptionState extends State<inscription> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(children: [
-        Container(
-          height: MediaQuery.of(context).size.height * 0.3,
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.3, // needs to be fixed because of sizing and screen needs scrolling
           child: Stack(
             children: [
               Positioned(
@@ -46,30 +46,37 @@ class _inscriptionState extends State<inscription> {
                   fit: BoxFit.cover,
                 ),
               ),
-              IconButton(
-                icon: Icon(Icons.arrow_back_ios_new),
-                color: Colors.black,
-                onPressed: () => Navigator.pop(context, false),
-              ),
               Positioned(
-                top: 100,
-                left: MediaQuery.of(context).size.width * 0.25,
+                top: 10,
+                left: 8,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(
+                          90, 60, 170, 54), // to be changed to right oppacity
+                      borderRadius: BorderRadius.circular(15)),
+                  child: IconButton(
+                    icon: const Icon(Icons.arrow_back_ios_new),
+                    color: const Color.fromRGBO(60, 170, 54, 1),
+                    onPressed: () => Navigator.pop(context, false),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(18, 90, 18, 20),
                 child: Column(children: [
                   Center(
                     child: Text(
                       "S’INSCRIRE",
                       style: GoogleFonts.roboto(
                           textStyle: const TextStyle(
-                              fontSize: 36, fontWeight: FontWeight.w700)),
+                              fontSize: 34, fontWeight: FontWeight.w500)),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
                   ),
                   Text(
                     "POUR CONTINUER",
                     style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
+                            color: Colors.grey,
                             fontSize: 18, fontWeight: FontWeight.w400)),
                   ),
                 ]),
@@ -100,7 +107,7 @@ class _inscriptionState extends State<inscription> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.fromLTRB(18, 0, 18, 8),
                       child: TextFormField(
                         controller: lastNameController,
                         validator: (String? value) {
@@ -110,19 +117,28 @@ class _inscriptionState extends State<inscription> {
                           return null;
                         },
                         decoration: InputDecoration(
-                            hintText: 'Prenom',
+                            hintText: 'Prénom',
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(50),
-                                borderSide: BorderSide.none),
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                width: 1,
+                                color: Color.fromRGBO(90, 108, 234,
+                                    0.07), // to be changed to lighter chade
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                color: Color.fromRGBO(90, 108, 234, 0.07),
+                                width: 1,
+                              ),
+                            ),
                             filled: true,
-                            fillColor: Color.fromARGB(224, 237, 235, 235)),
+                            fillColor: Colors.white),
                       ),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.fromLTRB(18, 4, 18, 4),
                       child: TextFormField(
                         controller: firstNameController,
                         validator: (String? value) {
@@ -134,17 +150,26 @@ class _inscriptionState extends State<inscription> {
                         decoration: InputDecoration(
                             hintText: 'Nom',
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(50),
-                                borderSide: BorderSide.none),
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                width: 1,
+                                color: Color.fromRGBO(90, 108, 234,
+                                    0.07), // to be changed to lighter chade
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                color: Color.fromRGBO(90, 108, 234, 0.07),
+                                width: 1,
+                              ),
+                            ),
                             filled: true,
-                            fillColor: Color.fromARGB(224, 237, 235, 235)),
+                            fillColor: Colors.white),
                       ),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.fromLTRB(18, 4, 18, 4),
                       child: TextFormField(
                         controller: emailController,
                         validator: (value) => isEmail(value.toString())
@@ -153,17 +178,26 @@ class _inscriptionState extends State<inscription> {
                         decoration: InputDecoration(
                             hintText: 'Email',
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(50),
-                                borderSide: BorderSide.none),
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                width: 1,
+                                color: Color.fromRGBO(90, 108, 234,
+                                    0.07), // to be changed to lighter chade
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                color: Color.fromRGBO(90, 108, 234, 0.07),
+                                width: 1,
+                              ),
+                            ),
                             filled: true,
-                            fillColor: Color.fromARGB(224, 237, 235, 235)),
+                            fillColor: Colors.white),
                       ),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.fromLTRB(18, 4, 18, 4),
                       child: TextFormField(
                         controller: phoneController,
                         validator: (String? value) {
@@ -173,19 +207,28 @@ class _inscriptionState extends State<inscription> {
                           return null;
                         },
                         decoration: InputDecoration(
-                            hintText: 'numero de telephone',
+                            hintText: 'Téléphone',
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(50),
-                                borderSide: BorderSide.none),
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                width: 1,
+                                color: Color.fromRGBO(90, 108, 234,
+                                    0.07), // to be changed to lighter chade
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                color: Color.fromRGBO(90, 108, 234, 0.07),
+                                width: 1,
+                              ),
+                            ),
                             filled: true,
-                            fillColor: Color.fromARGB(224, 237, 235, 235)),
+                            fillColor: Colors.white),
                       ),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.fromLTRB(18, 4, 18, 4),
                       child: TextFormField(
                         controller: passwordController,
                         validator: (String? value) {
@@ -207,17 +250,26 @@ class _inscriptionState extends State<inscription> {
                                     ? Icon(Icons.remove_red_eye_sharp)
                                     : Icon(Icons.visibility_off)),
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(50),
-                                borderSide: BorderSide.none),
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                width: 1,
+                                color: Color.fromRGBO(90, 108, 234,
+                                    0.07), // to be changed to lighter chade
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                color: Color.fromRGBO(90, 108, 234, 0.07),
+                                width: 1,
+                              ),
+                            ),
                             filled: true,
-                            fillColor: Color.fromARGB(224, 237, 235, 235)),
+                            fillColor: Colors.white),
                       ),
                     ),
-                    SizedBox(
-                      height: 15,
-                    ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      padding: EdgeInsets.fromLTRB(18, 4, 18, 4),
                       child: TextFormField(
                         controller: passwordConfirmationController,
                         validator: (String? value) {
@@ -241,22 +293,42 @@ class _inscriptionState extends State<inscription> {
                                     ? Icon(Icons.remove_red_eye_sharp)
                                     : Icon(Icons.visibility_off)),
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(50),
-                                borderSide: BorderSide.none),
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                width: 1,
+                                color: Color.fromRGBO(90, 108, 234,
+                                    0.07), // to be changed to lighter chade
+                              ),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                color: Color.fromRGBO(90, 108, 234, 0.07),
+                                width: 1,
+                              ),
+                            ),
                             filled: true,
-                            fillColor: Color.fromARGB(224, 237, 235, 235)),
+                            fillColor: Colors.white),
                       ),
                     ),
-
-                    SizedBox(
-                      height: 50,
-                    ),
-
-                    //Button
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: InkWell(
-                        onTap: () async {
+                      padding: EdgeInsets.fromLTRB(36, 18, 36, 8),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(375, 60),
+                          primary: const Color.fromRGBO(60, 170, 54, 1),
+                          onPrimary: Colors.white,
+                          side: const BorderSide(
+                            width: 1,
+                            color: Color.fromARGB(158, 60, 170, 1),
+                          ),
+                          //shadowColor: Colors.greenAccent,
+                          elevation: 1,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
+                        onPressed: () async {
                           if (_formKey.currentState!.validate()) {
                             runMutation({
                               'firstName': firstNameController.text.trim(),
@@ -270,18 +342,14 @@ class _inscriptionState extends State<inscription> {
                             });
                           }
                         },
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 60,
-                          child: Text(
-                            "Suivant",
-                            style: GoogleFonts.roboto(
-                                textStyle: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w700)),
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Color.fromRGBO(147, 197, 114, 1),
+                        child: Text(
+                          "Suivant",
+                          style: GoogleFonts.roboto(
+                            textStyle: const TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                              //color: Colors.black
+                            ),
                           ),
                         ),
                       ),
