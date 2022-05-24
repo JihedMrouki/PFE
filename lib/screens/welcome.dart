@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mealbox/screens/connection/select_entreprise.dart';
-import 'package:mealbox/screens/inscription/confirmation.dart';
+import 'package:mealbox/screens/Widgets/BottomNavBar.dart';
 import 'connection/connection.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -89,10 +89,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                   ),
                                 ),
                                 onPressed: () {
+                                  // Navigator.push(
+                                  //   context,
+                                  //   MaterialPageRoute(
+                                  //     builder: (context) => SelectEntreprise(),
+                                  //   ),
+                                  // );
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => SelectEntreprise(),
+                                      builder: (context) => BottomNavBar(),
                                     ),
                                   );
                                 },
