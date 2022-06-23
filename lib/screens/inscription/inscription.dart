@@ -5,14 +5,14 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:mealbox/screens/inscription/verification.dart';
 import 'package:validators/validators.dart';
 
-class inscription extends StatefulWidget {
-  const inscription({Key? key}) : super(key: key);
+class Inscription extends StatefulWidget {
+  const Inscription({Key? key}) : super(key: key);
 
   @override
-  _inscriptionState createState() => _inscriptionState();
+  _InscriptionState createState() => _InscriptionState();
 }
 
-class _inscriptionState extends State<inscription> {
+class _InscriptionState extends State<Inscription> {
   bool test = false;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController lastNameController = new TextEditingController();
@@ -35,7 +35,8 @@ class _inscriptionState extends State<inscription> {
     return Scaffold(
       body: ListView(children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.3, // needs to be fixed because of sizing and screen needs scrolling
+          height: MediaQuery.of(context).size.height *
+              0.3, // needs to be fixed because of sizing and screen needs scrolling
           child: Stack(
             children: [
               Positioned(
@@ -77,7 +78,8 @@ class _inscriptionState extends State<inscription> {
                     style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
                             color: Colors.grey,
-                            fontSize: 18, fontWeight: FontWeight.w400)),
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400)),
                   ),
                 ]),
               ),
@@ -90,7 +92,7 @@ class _inscriptionState extends State<inscription> {
             onCompleted: (dynamic data) {
               if (data != null) {
                 (Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => VerificationUi())));
+                    MaterialPageRoute(builder: (context) => VerificationUi()),));
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content: Text("Erreur Something not right"),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mealbox/screens/connection/enterprise_form_two.dart';
+import 'package:mealbox/screens/connection/success.dart';
 
 class EntrepriseForm extends StatefulWidget {
   const EntrepriseForm({Key? key}) : super(key: key);
@@ -217,6 +218,102 @@ class _EntrepriseFormState extends State<EntrepriseForm> {
                   ),
                 ),
                 Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        hintText: 'Nom',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: const BorderSide(
+                            width: 1,
+                            color: Color.fromRGBO(90, 108, 234,
+                                0.07), // to be changed to lighter chade
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: const BorderSide(
+                            color: Color.fromRGBO(90, 108, 234, 0.07),
+                            width: 1,
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        hintText: 'Prénom',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: const BorderSide(
+                            width: 1,
+                            color: Color.fromRGBO(90, 108, 234,
+                                0.07), // to be changed to lighter chade
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: const BorderSide(
+                            color: Color.fromRGBO(90, 108, 234, 0.07),
+                            width: 1,
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        hintText: 'Email personnel',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: const BorderSide(
+                            width: 1,
+                            color: Color.fromRGBO(90, 108, 234,
+                                0.07), // to be changed to lighter chade
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: const BorderSide(
+                            color: Color.fromRGBO(90, 108, 234, 0.07),
+                            width: 1,
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        hintText: 'Téléphone',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: const BorderSide(
+                            width: 1,
+                            color: Color.fromRGBO(90, 108, 234,
+                                0.07), // to be changed to lighter chade
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: const BorderSide(
+                            color: Color.fromRGBO(90, 108, 234, 0.07),
+                            width: 1,
+                          ),
+                        ),
+                        filled: true,
+                        fillColor: Colors.white),
+                  ),
+                ),
+                Padding(
                   padding: const EdgeInsets.fromLTRB(36, 36, 36, 0),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -235,15 +332,15 @@ class _EntrepriseFormState extends State<EntrepriseForm> {
                     ),
                     onPressed: () {
                       Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => EntrepriseFormTwo(),
-                    ),
-                  );
-                       // routing to next page and function to recover data or send it
-                    }, 
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Sucess(),
+                        ),
+                      );
+                      // routing to next page and function to recover data or send it
+                    },
                     child: Text(
-                      "Suivant",
+                      "Envoyer",
                       style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
                           fontSize: 20,

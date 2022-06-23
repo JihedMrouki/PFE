@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import '../Profile/Profile.dart';
+import '../cart/cart.dart';
+import '../history/history.dart';
 import '../menu/menu.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -15,9 +16,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final _screens = [
     const Menu(),
     const Profile(),
-    // const Checkout(),
-    // const History(),
-    // const Settings(),
+    const Cart(),
+    const History(),
   ];
 
   int _selectedIndex = 0;
@@ -40,7 +40,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           color: Colors.transparent,
           child: Padding(
             padding:
-                const EdgeInsets.only(bottom: 0, right: 0, left: 0, top: 20),
+                const EdgeInsets.only(bottom: 0, right: 0, left: 0, top: 5),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: BottomNavigationBar(
@@ -81,14 +81,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
                         child: _selectedIndex == 3
                             ? Icon(Icons.history_rounded)
                             : Icon(Icons.history_rounded),
-                      ),
-                      label: ''),
-                  BottomNavigationBarItem(
-                      icon: Padding(
-                        padding: const EdgeInsets.only(top: 10),
-                        child: _selectedIndex == 4
-                            ? Icon(Icons.settings)
-                            : Icon(Icons.settings),
                       ),
                       label: ''),
                 ],

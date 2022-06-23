@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mealbox/screens/welcome.dart';
 
-class Confirmation extends StatefulWidget {
-  const Confirmation({Key? key}) : super(key: key);
+class Sucess extends StatefulWidget {
+  const Sucess({Key? key}) : super(key: key);
 
   @override
-  _ConfirmationState createState() => _ConfirmationState();
+  _SucessState createState() => _SucessState();
 }
 
-class _ConfirmationState extends State<Confirmation> {
+class _SucessState extends State<Sucess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,12 +31,13 @@ class _ConfirmationState extends State<Confirmation> {
                     'Félicitations!',
                     style: GoogleFonts.roboto(
                         textStyle: const TextStyle(
-                          color: Color.fromRGBO(60, 170, 54, 1),
-                            fontSize: 34, fontWeight: FontWeight.w700)),
+                            color: Color.fromRGBO(60, 170, 54, 1),
+                            fontSize: 34,
+                            fontWeight: FontWeight.w700)),
                   ),
                 ),
                 Text(
-                  'Votre compte est pret !',
+                  'Votre demande est envoyé!',
                   style: GoogleFonts.roboto(
                       textStyle: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.w600)),
@@ -64,10 +66,15 @@ class _ConfirmationState extends State<Confirmation> {
                 ),
               ),
               onPressed: () {
-                
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WelcomeScreen(),
+                  ),
+                );
               },
               child: Text(
-                "Commencer",
+                "Retourn au page d'acceuil",
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     fontSize: 20,

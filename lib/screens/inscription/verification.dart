@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'confirmation.dart';
-
 class VerificationUi extends StatelessWidget {
   const VerificationUi({Key? key}) : super(key: key);
 
@@ -256,7 +254,9 @@ class VerificationUi extends StatelessWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
               ),
-              onPressed: () {},
+              onPressed: () {
+                
+              },
               child: Text(
                 "Suivant",
                 style: GoogleFonts.roboto(

@@ -9,6 +9,11 @@ void main() async {
     'https://gateway.mealbox.dev/graphql',
   );
 
+  // await initHiveForFlutter();
+  // final HttpLink httpLink = HttpLink(
+  //   'http://10.0.2.2:4000/',
+  // );
+
   final AuthLink authLink = AuthLink(
     getToken: () async => 'Bearer <YOUR_PERSONAL_ACCESS_TOKEN>',
     // OR
