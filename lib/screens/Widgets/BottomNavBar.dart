@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import '../Profile/Profile.dart';
 import '../cart/cart.dart';
+import '../cart/carte.dart';
 import '../history/history.dart';
 import '../menu/menu.dart';
 
@@ -16,7 +17,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final _screens = [
     const Menu(),
     const Profile(),
-    const Cart(),
+    // const Cart(),
+     OrderPage(),
     const History(),
   ];
 

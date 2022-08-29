@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:mealbox/screens/connection/enterprise_form.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:mealbox/screens/inscription/inscription.dart';
 
 class SelectEntreprise extends StatefulWidget {
   const SelectEntreprise({Key? key}) : super(key: key);
@@ -186,20 +187,21 @@ class _SelectEntrepriseState extends State<SelectEntreprise> {
 
           Query(
               options: QueryOptions(
-                variables: {
-                  'location': _latitude != null
-                      ? {
-                          'latitude': _latitude,
-                          'longitude': _longitude,
-                        }
-                      : null
-                },
+                // variables: {
+                //   'location': _latitude != null
+                //       ? {
+                //           'latitude': _latitude,
+                //           'longitude': _longitude,
+                //         }
+                //       : null
+                // },
                 document: gql(companySearch),
                 fetchPolicy: FetchPolicy.cacheAndNetwork,
               ),
               builder: (QueryResult result, {refetch, fetchMore}) {
                 if (result.hasException) {
-                  return Text(result.exception.toString());
+                  // return Text(result.exception.toString());
+                  return const Text("Accune entreprise trouvé a cette location");
                 }
 
                 if (result.isLoading) {
@@ -256,7 +258,12 @@ class _SelectEntrepriseState extends State<SelectEntreprise> {
                             ],
                           ),
                           onTap: () {
-                            print("go to menu");
+                            Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>  Inscription(),
+                                    ),
+                                  );
                           },
                         ),
                       );

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mealbox/screens/welcome.dart';
 
-class Sucess extends StatefulWidget {
-  const Sucess({Key? key}) : super(key: key);
+class LoginSucess extends StatefulWidget {
+  const LoginSucess({Key? key}) : super(key: key);
 
   @override
-  _SucessState createState() => _SucessState();
+  _LoginSucessState createState() => _LoginSucessState();
 }
 
-class _SucessState extends State<Sucess> {
+class _LoginSucessState extends State<LoginSucess> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +36,7 @@ class _SucessState extends State<Sucess> {
                   ),
                 ),
                 Text(
-                  'Votre demande est envoyé!',
+                  'Inscription avec succes',
                   style: GoogleFonts.roboto(
                       textStyle: const TextStyle(
                           fontSize: 20, fontWeight: FontWeight.w600)),
@@ -69,12 +68,12 @@ class _SucessState extends State<Sucess> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const WelcomeScreen(),
+                    builder: (context) => const BottomAppBar(),
                   ),
                 );
               },
               child: Text(
-                "Retourn au page d'acceuil",
+                "Acceder au menu",
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     fontSize: 20,

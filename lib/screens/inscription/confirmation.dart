@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:mealbox/screens/welcome.dart';
 
 class Confirmation extends StatefulWidget {
   const Confirmation({Key? key}) : super(key: key);
@@ -64,10 +65,15 @@ class _ConfirmationState extends State<Confirmation> {
                 ),
               ),
               onPressed: () {
-                
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WelcomeScreen(),
+                  ),
+                );
               },
               child: Text(
-                "Commencer",
+                "Se connecter et Commencer",
                 style: GoogleFonts.roboto(
                   textStyle: const TextStyle(
                     fontSize: 20,

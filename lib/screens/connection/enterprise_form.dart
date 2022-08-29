@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mealbox/screens/connection/enterprise_form_two.dart';
 import 'package:mealbox/screens/connection/success.dart';
 
 class EntrepriseForm extends StatefulWidget {

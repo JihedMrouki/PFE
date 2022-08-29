@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:mealbox/screens/inscription/confirmation.dart';
 import 'package:mealbox/screens/inscription/verification.dart';
+import 'package:mealbox/screens/welcome.dart';
 import 'package:validators/validators.dart';
 
 class Inscription extends StatefulWidget {
@@ -91,12 +93,18 @@ class _InscriptionState extends State<Inscription> {
             document: gql(customerRegister),
             onCompleted: (dynamic data) {
               if (data != null) {
-                (Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => VerificationUi()),));
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text("Erreur Something not right"),
+                (Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Confirmation()),
                 ));
+                //   } else {
+                //     ScaffoldMessenger.of(context).showSnackBar(
+                //       const SnackBar(
+                //         content: Text("Erreur quelque chose a mal tourné"),
+                //       ),
+                //     );
+                //   }
+                // },
               }
             },
           ),

@@ -66,6 +66,31 @@ class _CartState extends State<Cart> {
               ],
             ),
           ),
+          ListView.builder(
+              scrollDirection: Axis.vertical,
+              physics: const ClampingScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: 3,
+              itemBuilder: (_, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.horizontal(
+                        right: Radius.circular(15),
+                        left: Radius.circular(15),
+                      ),
+                      side: BorderSide(
+                        color: Colors.transparent,
+                      ),
+                    ),
+                    leading: SvgPicture.asset(
+                      "assets/images/entreprise_logo.svg",
+                      height: 28,
+                    ),
+                  ),
+                );
+              }),
           // Query(
           //   options: QueryOptions(
           //     document: gql(cartList),
